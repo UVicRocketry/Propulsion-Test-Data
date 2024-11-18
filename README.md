@@ -8,7 +8,7 @@ Within this folder, all data files must adhere to the following format so that i
 - Comma seperated values (CSV) (except the first line)
 - The first line is units of the header line.
 - The second line is a header of at least the columns of data within the file.
-- Remaining lines are data which all *must* contain a timestamp entry in `YYYY-MM-DD HH:MM:SSSSSS`. This can be obtained from `timestamp = str(datetime.datetime.now())` using the `datetime` module in python.
+- Remaining lines are data which all *must* contain a timestamp entry in `YYYY-MM-DD HH:MM:SS.mmmmmm`. This can be obtained from `timestamp = str(datetime.datetime.now())` using the `datetime` module in python.
 ### Example:
 ```
 ,psi,psi,psi,psi,psi,kg,N,C,C,C,C,
