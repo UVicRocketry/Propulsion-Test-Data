@@ -2,8 +2,9 @@
 CSV records of test data from the UVR propulsion division.
 
 # Important! Formatting rules for uploaded data:
-Create a folder named `YYYY:MM:DD_DESCRIPTION` where `DESCRIPTION` is very brief context for the test. Eg. `2024:11:17_MULE-1-COLDFLOW`
+Create a folder named `YYYY-MM-DD_DESCRIPTION` where `DESCRIPTION` is very brief context for the test. Eg. `2024-11-17_MULE-1-COLDFLOW`
 Within this folder, all data files must adhere to the following format so that it can be parsed easily by a script without having to modify code for each dataset.
+- Filename for each test: `data0.csv`, `data1.csv` etc. where `data0.csv` was recorded before `data1.csv`.
 - Comma seperated values (CSV) (except the first line)
 - The first line is units of the header line.
 - The second line is a header of at least the columns of data within the file.
