@@ -35,6 +35,15 @@ try:
         for line in lines:
             json_data = line.strip()  # Clean up any extra whitespace/newlines
             data_dict = json.loads(json_data)
+
+            # Reduce sig figs of data to save space.
+            for key in data_dict.keys():
+                try:
+                    if key != "seconds":
+                        data_dict[key] = round(data_dict[key], 1)
+                except:
+                    pass
+
             ds.append(data_dict)
 
 except Exception as e:
@@ -44,7 +53,7 @@ except Exception as e:
 df = pd.DataFrame(ds)
 
 # Convert 'timestamp' field to datetime objects and calculate the 'seconds' column
-df['timestamp'] = pd.to_datetime(df['timestamp'])
+df['timestamp'] = pd.to_datetime(df['timestamp'], format='mixed')
 first_timestamp = df['timestamp'].iloc[0]
 df['seconds'] = (df['timestamp'] - first_timestamp).dt.total_seconds()
 
